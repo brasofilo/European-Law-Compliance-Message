@@ -22,7 +22,7 @@ class B5F_EULCM_Cookie
 	public $option_value = NULL;
 	public $plugin_url = NULL;
 	public $plugin_path = NULL;
-	public $plugin_slug;
+	public $plugin_slug = NULL;
 	
 	public static function get_instance()
 	{
