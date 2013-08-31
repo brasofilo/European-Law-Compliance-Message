@@ -11,7 +11,8 @@
  */
 
 add_action(
-		'plugins_loaded', array( B5F_EULCM_Cookie::get_instance(), 'plugin_setup' )
+		'plugins_loaded', 
+		array( B5F_EULCM_Cookie::get_instance(), 'plugin_setup' )
 );
 
 class B5F_EULCM_Cookie
