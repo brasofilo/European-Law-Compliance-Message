@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: European Law Compliance Message\n"
+"POT-Creation-Date: 2013-08-31 18:23+0100\n"
+"PO-Revision-Date: 2013-08-31 18:24+0100\n"
+"Last-Translator: Rodolfo Buaiz <brasofilo@gmai.com>\n"
+"Language-Team:  <brasofilo@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../eu-cookie.php:128 ../eu-cookie.php:129
+msgid "EU Cookie Message"
+msgstr ""
+
+#: ../eu-cookie.php:164
+msgid "EU Cookie Law Compliance Message"
+msgstr ""
+
+#: ../eu-cookie.php:262
+msgid "Cookies on this website"
+msgstr ""
+
+#: ../eu-cookie.php:263
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue without changing your settings, we'll assume that "
+"you are happy to receive all cookies from this website. If you would like to "
+"change your preferences you may do so by following the instructions <a href="
+"\"http://www.aboutcookies.org/Default.aspx?page=1\" rel=\"nofollow\">here</"
+"a>."
+msgstr ""
+
+#: ../eu-cookie.php:264
+msgid "Close"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:13
+msgid "Custom Styles (advanced)"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:21
+msgid "Message Background Colour"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:29
+msgid "Message Transparency"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:37
+msgid "Title Heading Colour"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:45
+msgid "Title Heading Font Size"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:53
+msgid "Title Heading Font Family"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:61
+msgid "Message Colour"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:69
+msgid "Message Font Size"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:77
+msgid "Message Font Family"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:85
+msgid "Close Link Colour"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:93
+msgid "Close Link Font Size"
+msgstr ""
+
+#: ../inc/add-settings-custom.php:101
+msgid "Close Link Font Family"
+msgstr ""
+
+#: ../inc/add-settings-main.php:10
+msgid "Main Settings"
+msgstr ""
+
+#: ../inc/add-settings-main.php:17
+msgid "Notification Title"
+msgstr ""
+
+#: ../inc/add-settings-main.php:25
+msgid "Message"
+msgstr ""
+
+#: ../inc/add-settings-main.php:33
+msgid "Close Link Text"
+msgstr ""
+
+#: ../inc/add-settings-main.php:41
+msgid "Content Padding"
+msgstr ""
+
+#: ../inc/add-settings-main.php:49
+msgid "Message Maximum Width"
+msgstr ""
+
+#: ../inc/add-settings-main.php:57
+msgid "Message hovers over content"
+msgstr ""
+
+#: ../inc/add-settings-main.php:65
+msgid "Visual Style"
+msgstr ""
+
+#: ../inc/add-settings-main.php:73
+msgid "Debug Mode"
+msgstr ""
+
+#: ../inc/add-settings-main.php:81
+msgid "Reset Options"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:32
+msgid ""
+"Change the settings below to alter how the Cookie message will be shown. You "
+"can select the light theme, the dark theme or create your own by selecting "
+"custom."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:41
+msgid "Use these options to customise the Cookie Message styles."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:98
+msgid "Dark - Black Background, White Text"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:99
+msgid "Light - White Background, Dark Grey Text"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:100
+msgid "Custom - Enter Your Own Values Below"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:121
+msgid "Tick this and click save changes to reset back to default."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:131
+msgid ""
+"If enabled, cookie message will hover over the page content. If disabled, "
+"message will push down the page content."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:141
+msgid ""
+"If enabled the cookie will not be set, so you can reload the page many times "
+"and still view the message. Remember to disable thie when you put your site "
+"live!"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:153 ../inc/class-settings-fields.php:176
+#: ../inc/class-settings-fields.php:209 ../inc/class-settings-fields.php:242
+msgid "Select color"
+msgstr ""
+
+#: ../inc/class-settings-fields.php:154
+msgid "Hexadecimal colour code to use for the background of the message bar."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:164
+msgid ""
+"Enter the transparency for the message background. 0 is invisible and 1 is "
+"solid colour. Default is 0.8."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:177
+msgid "Hexadecimal colour code to use for the message title."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:187
+msgid ""
+"Font size for the message title. Can be in pixels (px), ems (em), points "
+"(pt) or percent (%)."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:197
+msgid ""
+"The HTML font family to use for the message title. You can use any valid "
+"font-family declarations."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:210
+msgid "Hexadecimal colour code to use for the message body text."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:220
+msgid "Font size for the message body text."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:230
+msgid "The HTML font family to use for the message title."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:243
+msgid "Hexadecimal colour code to use for the close message link."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:253
+msgid "Font size for the close message link."
+msgstr ""
+
+#: ../inc/class-settings-fields.php:263
+msgid "The HTML font family to use for the close message link."
+msgstr ""
