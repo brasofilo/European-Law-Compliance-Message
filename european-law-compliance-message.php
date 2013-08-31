@@ -140,8 +140,12 @@ class B5F_EULCM_Cookie
 	{
 		# Submenu page
 		$hook = add_submenu_page(
-				'options-general.php', __( 'EU Cookie Message', 'EUCLC' ), __( 'EU Cookie Message', 'EUCLC' ), 'add_users', 'euc_settings', array(
-			$this, 'settings_page_callback' )
+				'options-general.php', 
+				__( 'EU Cookie Message', 'EUCLC' ), 
+				__( 'EU Cookie Message', 'EUCLC' ), 
+				'add_users', 
+				'euc_settings', 
+				array( $this, 'settings_page_callback' )
 		);
 		# Plugin page scripts
 		add_action( "admin_print_scripts-$hook", array( $this, 'plugin_page_enqueue' ) );
@@ -176,8 +180,8 @@ class B5F_EULCM_Cookie
 		<div class="wrap">
 			<h2><?php _e( 'EU Cookie Law Compliance Message', 'EUCLC' ); ?></h2>
 			<form method="post" action="options.php">
-		<?php settings_fields( 'EUCookieLawCompliance' ); ?>
-		<?php do_settings_sections( 'euc_settings' ); ?>
+			<?php settings_fields( 'EUCookieLawCompliance' ); ?>
+			<?php do_settings_sections( 'euc_settings' ); ?>
 			</form>
 		</div>
 		<?php
@@ -431,7 +435,9 @@ class B5F_EULCM_Cookie
 		if( $file == $plugin )
 		{
 			$in = sprintf(
-					'<a href="%s">%s</a>', admin_url( 'options-general.php?page=euc_settings' ), __( 'Settings', 'EUCLC' )
+					'<a href="%s">%s</a>', 
+					admin_url( 'options-general.php?page=euc_settings' ), 
+					__( 'Settings', 'EUCLC' )
 			);
 			array_unshift( $links, $in );
 		}
@@ -456,7 +462,9 @@ class B5F_EULCM_Cookie
 		# Prepare vars
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 		$mo = sprintf(
-				'%s/plugins/%s/%s', WP_LANG_DIR, $this->plugin_slug, $domain . '-' . $locale . '.mo'
+				'%s/plugins/%s/%s', 
+				WP_LANG_DIR, $this->plugin_slug, 
+				$domain . '-' . $locale . '.mo'
 		);
 
 		# Load from /wp-content/languages/plugins/plugin-name/plug-xx_XX.mo'
