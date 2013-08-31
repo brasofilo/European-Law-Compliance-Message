@@ -13,6 +13,7 @@ Revamp for the plugin: [EU Cookie Law Complience Message](http://wordpress.org/p
  - Added sanitization to the Settings form.
  - Moved "reset" option inside sanitization.
  - Translation ready (the spanish file contain only some sample translations).
+ - Added link to the Plugin's Settings page in Dashboard Plugins page
 
 ###JavaScript
 

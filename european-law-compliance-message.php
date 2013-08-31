@@ -1,10 +1,12 @@
 <?php
-/* Plugin Name: 00 EU Cookie Law Compliance Message
+/* Plugin Name: EU Cookie Law Compliance Message
  * Description: Revamp for http://azuliadesigns.com/wordpress-plugin-eu-cookie-law/
- * Plugin URI: #
- * Version:     2013.08.31
+ * Plugin URI: https://github.com/brasofilo/European-Law-Compliance-Message
+ * Version:     2013.08.31.2
  * Author:      Azulia Designs, Rodolfo Buaiz
  * Author URI:  http://rodbuaiz.com
+ * Text Domain: EUCLC
+ * Domain Path: /languages/
  * License: GPLv2 or later
  */
 
@@ -20,6 +22,7 @@ class B5F_EULCM_Cookie
 	public $option_value = NULL;
 	public $plugin_url = NULL;
 	public $plugin_path = NULL;
+	public $plugin_slug;
 	
 	public static function get_instance()
 	{
@@ -31,8 +34,12 @@ class B5F_EULCM_Cookie
 	{
 		$this->plugin_url    = plugins_url( '/', __FILE__ );
 		$this->plugin_path   = plugin_dir_path( __FILE__ );
+		$this->plugin_slug	 = dirname( plugin_basename( __FILE__ ) );
 		
-		// AFAIK, there's no performance gain, but let's store this value localy
+		# Workaround to translate the description in the plugin page
+		$translate_description = __( 'Revamp for http://azuliadesigns.com/wordpress-plugin-eu-cookie-law/', 'EUCLC' );
+		
+		# AFAIK, there's no performance gain, but let's store this value localy
 		$this->get_option();
 		
         # Load translation files
@@ -41,6 +48,7 @@ class B5F_EULCM_Cookie
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) ); 
 		add_action( 'wp_head', array( $this, 'print_style' ) );
 		add_action( 'admin_menu', array( $this, 'create_admin_menu' ) );
+		add_filter( 'plugin_action_links', array( $this, 'settings_plugin_link' ), 10, 2 );
 	}
 	
 	/**
@@ -55,16 +63,21 @@ class B5F_EULCM_Cookie
 	{
 		$get = get_option( self::$option_name ); 
 		
+		# Option not set, initiate
 		if( !$get )
 		{
-			$get_old = get_option( 'EUCLC' );
+			# Default values
 			$get = $this->defaults();
+			# Check for old option name
+			$get_old = get_option( 'EUCLC' );
+			# Use old values
 			if( $get_old )
 			{
 				$get = array_merge($get, $get_old);
 				delete_option( 'EUCLC' );
 				update_option( self::$option_name, $get );
 			}
+			# Use default values
 			else
 				update_option( self::$option_name, $get );
 		}
@@ -72,13 +85,13 @@ class B5F_EULCM_Cookie
 	}
 	
 	/**
-	 * Print front end CSS
+	 * Print frontend CSS
 	 * 
 	 * @return string Inline Stylesheet
 	 */
 	public function print_style()  
 	{  
-		// Run only at index page
+		# Run only at index page
 		if( !is_home() && !is_front_page() )
 			return;
 		
@@ -87,13 +100,13 @@ class B5F_EULCM_Cookie
 	}
 	
 	/**
-	 * Enqueue and localize front end JS
+	 * Enqueue and localize frontend JS
 	 * 
 	 * @return void
 	 */
 	public function enqueue_scripts()  
 	{  
-		// Run only at index page
+		# Run only at index page
 		if( !is_home() && !is_front_page() )
 			return;
 		
@@ -104,9 +117,7 @@ class B5F_EULCM_Cookie
 			, null
 			, true
 		);
-
 		wp_enqueue_script( 'eu-cookie' );
-
 		wp_localize_script( 
 			 'eu-cookie' 
 			, 'eu_cookie' 
@@ -115,10 +126,11 @@ class B5F_EULCM_Cookie
 	} 
 
 	/**
-	 *  Create the admin menu
+	 *  Admin submenu
 	 */
 	public function create_admin_menu() 
 	{
+		# Submenu page
 		$hook = add_submenu_page(
 			'options-general.php', 
 			__( 'EU Cookie Message', 'EUCLC'), 
@@ -127,10 +139,10 @@ class B5F_EULCM_Cookie
 			'euc_settings', 
 			array( $this, 'settings_page_callback' )
 		); 
-		add_action( 'admin_init', array( $this, 'init_register_settings' ) );
-		
 		# Plugin page scripts
 		add_action( "admin_print_scripts-$hook", array( $this, 'plugin_page_enqueue' ) );		
+		# Settings API
+		add_action( 'admin_init', array( $this, 'init_register_settings' ) );
 	}
 
 	/**
@@ -145,7 +157,6 @@ class B5F_EULCM_Cookie
 			, null
 			, true
 		);
-
 		wp_enqueue_script( 'eu-cookie-admin' );
 		wp_enqueue_style( 'farbtastic' );
 	}
@@ -394,12 +405,33 @@ class B5F_EULCM_Cookie
 			$b = hexdec( substr( $hex, 4, 2 ) );
 		}
 		$rgb = array( $r, $g, $b );
-		return implode( ",", $rgb ); // returns the rgb values separated by commas
-	   //return $rgb; // returns an array with the rgb values
+		return implode( ",", $rgb ); # returns the rgb values separated by commas
+	   //return $rgb; # returns an array with the rgb values
 	}
 	
 	/**
-     * Localize plugin function.
+	 * Add link to settings in Plugins list page
+	 * 
+	 * @return Plugin link
+	 */
+	public function settings_plugin_link( $links, $file )
+	{
+		$plugin = plugin_basename( dirname( __FILE__ ) . '/' . $this->plugin_slug . '.php');
+		if( $file == $plugin )
+		{
+			$in = sprintf(
+					'<a href="%s">%s</a>',
+					admin_url( 'options-general.php?page=euc_settings' ),
+					__( 'Settings', 'EUCLC' )
+			);
+			array_unshift( $links, $in );
+		}
+		return $links;
+	}
+
+
+	/**
+     * Translation
      *
      * @uses    load_plugin_textdomain, plugin_basename
      * @since   2.0.0
@@ -412,26 +444,26 @@ class B5F_EULCM_Cookie
 		if( 'options-general' != $pagenow && (!isset( $_GET['page'] ) || 'euc_settings' != $_GET['page']) )
 			return;	
 		
-		$slug = dirname( plugin_basename( __FILE__ ) );
+		# Prepare vars
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 		$mo = sprintf(
 			'%s/plugins/%s/%s',
 			WP_LANG_DIR,
-			$slug,
+			$this->plugin_slug,
 			$domain.'-'.$locale.'.mo'
 		);
 
-		// Load from /wp-content/languages/plugins/plugin-name/plug-xx_XX.mo'
+		# Load from /wp-content/languages/plugins/plugin-name/plug-xx_XX.mo'
         load_textdomain( $domain, $mo );
 		
-		// Load from /wp-content/plugins/plugin-name/languages/plug-xx_XX.mo'
+		# Load from /wp-content/plugins/plugin-name/languages/plug-xx_XX.mo'
 		load_plugin_textdomain(
 			$domain,
 			FALSE,
-			$slug . '/languages'
+			$this->plugin_slug . '/languages'
 		);
     }
-
+	
 }
 
 

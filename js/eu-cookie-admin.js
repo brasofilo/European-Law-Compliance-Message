@@ -49,7 +49,7 @@ jQuery(document).ready(function($)
         input = jQuery(this).prev('input');
         $(input).css("background-color", $(input).val() );        
     });
-    // Pick color click action
+    // Select color click action
     $('.pickcolor').click( function(e) {
         e.preventDefault();
         colorPicker = $(this).next('div');

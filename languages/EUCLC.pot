@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: European Law Compliance Message\n"
-"POT-Creation-Date: 2013-08-31 18:23+0100\n"
-"PO-Revision-Date: 2013-08-31 18:24+0100\n"
+"POT-Creation-Date: 2013-08-31 23:26+0100\n"
+"PO-Revision-Date: 2013-08-31 23:26+0100\n"
 "Last-Translator: Rodolfo Buaiz <brasofilo@gmai.com>\n"
 "Language-Team:  <brasofilo@gmail.com>\n"
 "Language: English\n"
@@ -15,30 +15,21 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../eu-cookie.php:128 ../eu-cookie.php:129
+#: ../european-law-compliance-message.php:40
+msgid "Revamp for http://azuliadesigns.com/wordpress-plugin-eu-cookie-law/"
+msgstr ""
+
+#: ../european-law-compliance-message.php:136
+#: ../european-law-compliance-message.php:137
 msgid "EU Cookie Message"
 msgstr ""
 
-#: ../eu-cookie.php:164
+#: ../european-law-compliance-message.php:171
 msgid "EU Cookie Law Compliance Message"
 msgstr ""
 
-#: ../eu-cookie.php:262
-msgid "Cookies on this website"
-msgstr ""
-
-#: ../eu-cookie.php:263
-msgid ""
-"We use cookies to ensure that we give you the best experience on our "
-"website. If you continue without changing your settings, we'll assume that "
-"you are happy to receive all cookies from this website. If you would like to "
-"change your preferences you may do so by following the instructions <a href="
-"\"http://www.aboutcookies.org/Default.aspx?page=1\" rel=\"nofollow\">here</"
-"a>."
-msgstr ""
-
-#: ../eu-cookie.php:264
-msgid "Close"
+#: ../european-law-compliance-message.php:425
+msgid "Settings"
 msgstr ""
 
 #: ../inc/add-settings-custom.php:13

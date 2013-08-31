@@ -117,7 +117,7 @@ class B5F_EULCM_Settings_Fields
 		printf(
 			'<input type="checkbox" name="%s" id="chkReset" %s /> <label for="chkReset"> %s </label>',
 			self::sub_option( 'chkReset' ),
-			'', // TODO: THIS DON'T NEED TO BE CHECKED, DOES IT?
+			'', # TODO: THIS DON'T NEED TO BE CHECKED, DOES IT?
 			__( 'Tick this and click save changes to reset back to default.', 'EUCLC' )
 		);
 	}
