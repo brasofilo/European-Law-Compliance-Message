@@ -5,7 +5,7 @@ Revamp for the plugin: EU Cookie Law Complience Message - http://wordpress.org/p
 
 #List of modifications:
 
-###PLUGIN
+###Plugin
 
  - Encapsulated everything into classes
  - Changed option name to `EUCookieLawCompliance`, so as not to mix with the Locale
@@ -14,7 +14,7 @@ Revamp for the plugin: EU Cookie Law Complience Message - http://wordpress.org/p
  - Moved "reset" option inside sanitization
  - Translation ready
 
-###JAVASCRIPT
+###JavaScript
 
  - Moved out CSS from inside JS
  - Changed Cookie read/write to QuirksMode
